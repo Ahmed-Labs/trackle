@@ -12,7 +12,7 @@ function SignUp() {
       <div className={styles.card}>
         <div className={styles.formcontainer}>
           <form>
-            <h1 className={styles.title}>Trackle</h1>
+            <h1 className="text-center p-2 mt-24 mb-8 text-5xl font-semibold">Trackle</h1>
 
             <div className={styles.inputfield}>
               <label className={styles.label} htmlFor="">

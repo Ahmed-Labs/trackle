@@ -3,7 +3,7 @@ import MainNavigation from "./main-navigation/main-navigation";
 
 function Layout({ children }) {
   return (
-    <div style={{ display: "flex" }}>
+    <div className="flex">
       <MainNavigation />
       <main>{children}</main>
     </div>
