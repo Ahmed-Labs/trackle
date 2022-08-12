@@ -1,5 +1,5 @@
 import styles from './login.module.css'
-import Button from '../../main-button'
+import Button from '../../ui/button/main-button';
 import { useRef } from "react";
 
 function LogIn() {

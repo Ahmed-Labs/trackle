@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+}
+
+.navcontainer {
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  min-width: 250px;
+  border-right: 2px solid rgb(234, 234, 234);
+  display: flex;
+  flex-direction: column;
+}
+
+.navitem {
+  padding: 20px 20px;
+  margin-top: 10px;
+}
+
+.logout {
+  justify-content: flex-end;
+}

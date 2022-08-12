@@ -1,10 +1,11 @@
 import styles from "./signup.module.css";
-import Button from "../../main-button";
+import Button from "../../ui/button/main-button";
 import { useRef } from "react";
 
 function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const confirmPasswordRef = useRef();
 
   return (
     <div className={styles.container}>
@@ -37,8 +38,20 @@ function SignUp() {
                 placeholder="Password"
               />
             </div>
+            <div className={styles.inputfield}>
+              <label className={styles.label} htmlFor="password">
+                Confirm Password
+              </label>
+              <input
+                className={styles.input}
+                type="password"
+                id="confirm-password"
+                ref={confirmPasswordRef}
+                placeholder="Password"
+              />
+            </div>
             <div className={styles.alignedbutton}>
-              <Button text="Sign up" direct="/signup" />
+              <Button text="Sign up" direct="/api/signup" />
             </div>
           </form>
         </div>
