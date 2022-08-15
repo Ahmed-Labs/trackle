@@ -38,7 +38,7 @@ function LogIn() {
               />
             </div>
             <div className={styles.alignedbutton}>
-              <Button text="Log in" direct="/login" />
+              <Button text="Log in" direct="/dashboard" />
             </div>
           </form>
         </div>

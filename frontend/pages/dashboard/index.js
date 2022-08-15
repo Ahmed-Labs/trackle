@@ -2,10 +2,14 @@ import React, { Fragment, useState } from "react";
 import MainNavigation from "../../components/layout/main-navigation/main-navigation";
 import Layout from "../../components/layout/layout";
 import Table from "../../components/tracking/table";
-import styles from "./index.module.css";
+import Notifications from "../../components/layout/notifications";
 
 function Dashboard() {
-  return <Table />;
+  return (
+    <>
+      <Table />
+    </>
+  );
 }
 
 export default Dashboard;

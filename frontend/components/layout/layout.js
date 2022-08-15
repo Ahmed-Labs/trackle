@@ -1,11 +1,14 @@
 import React, { ReactElement } from "react";
 import MainNavigation from "./main-navigation/main-navigation";
+import Notifications from "./notifications";
 
 function Layout({ children }) {
   return (
     <div className="flex">
-      <MainNavigation />
-      <main>{children}</main>
+      <div className="max-w-[200px]">
+        <MainNavigation />
+      </div>
+      <main className="flex-auto">{children}</main>
     </div>
   );
 }
