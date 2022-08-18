@@ -5,18 +5,12 @@ import Notifications from "../layout/notifications";
 
 function Table() {
   const [userTableData, setUserTableData] = useState([
-    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
   ]);
 
-  const nonEmptyArray = (
-    <div>
-      <div>
-        {userTableData.map((item, index) => {
-          return <TrackingItem key={index} itemNumber={index} item={item} />;
-        })}
-      </div>
-    </div>
-  );
+  const nonEmptyArray = userTableData.map((item, index) => {
+    return <TrackingItem key={index} itemNumber={index} item={item} />;
+  });
 
   const emptyArray = (
     <div className="flex h-full justify-center items-center">
@@ -31,32 +25,48 @@ function Table() {
           <h1 className="font-semibold text-3xl">
             Tracking ({userTableData.length}) Packages
           </h1>
-          <div className="ml-auto">
-            <Button text="Select All" direct="/" />
-            <Button text="RR" direct="/" />
-            <Button text="+" direct="/" />
-            <Button text="-" direct="/" />
-          </div>
-        </div>
-        <div>
-          <div className="grid grid-cols-9 h-14 rounded items-center bg-gray-100 font-semibold ">
-            <p className="col-span-2">Tracking No.</p>
-            <p>Carrier</p>
-            <p>Time added</p>
-            <p>Status</p>
-            <div>Progress</div>
-            <div>Edit</div>
-            <div>Delete</div>
-            <div></div>
+          <div className="ml-auto flex items-center">
+            <div className="  w-[300px] bg-gray-200 rounded-lg border border-gray-300 flex items-center py-3 px-4 text-gray-700 hover:bg-gray-300 hover:text-black cursor-pointer">Track a package</div>
+            <div className="p-3 bg-blue-600 text-white ml-5 rounded-lg hover:bg-blue-700 cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
 
         <div className="overflow-y-scroll">
-          {userTableData.length === 0 ? emptyArray : nonEmptyArray}
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-4">
+            {userTableData.length === 0 ? emptyArray : nonEmptyArray}
+          </div>
         </div>
       </div>
-      <div className="h-full min-w-[300px] flex items-center justify-center border-l-2">
-        Notifications
+      <div className="hidden lg:flex lg:flex-col h-full max-w-[300px] border-l-2 justify-center">
+        <Notifications />
+        <div className="h-1/3 p-4">
+          <div className="h-full rounded-md border-1 flex flex-col justify-center hover:border border-blue-600">
+            <div className="py-8 px-3 text-center">
+              <p className="text-lg font-medium pb-3">User Feedback</p>
+              <p className="text-sm text-gray-600">
+                Give us feedback so we can improve your experience!
+              </p>
+            </div>
+            <div className="text-center">
+              <Button text="Feedback" direct="/" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

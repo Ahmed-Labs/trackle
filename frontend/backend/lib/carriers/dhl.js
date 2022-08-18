@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const trackingNumber = "7777777770";
+const trackingNumber = "8267682533";
 
 async function getData(trackingNumber) {
   const API_URL = `https://api-eu.dhl.com/track/shipments?trackingNumber=${trackingNumber}`;
@@ -37,6 +37,9 @@ function parseData(data) {
     destination: destination,
   };
 }
+
+
 const parse = getData(trackingNumber).then((data) => {
   console.log(parseData(data));
 });
+

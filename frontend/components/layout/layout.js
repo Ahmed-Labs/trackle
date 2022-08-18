@@ -5,7 +5,7 @@ import Notifications from "./notifications";
 function Layout({ children }) {
   return (
     <div className="flex">
-      <div className="max-w-[200px]">
+      <div className="hidden lg:flex max-w-[200px]">
         <MainNavigation />
       </div>
       <main className="flex-auto">{children}</main>

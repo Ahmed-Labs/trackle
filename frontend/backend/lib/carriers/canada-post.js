@@ -55,7 +55,3 @@ function parseData(data) {
     destination: addtnlDestInfo,
   };
 }
-
-const parse = getData('9586321748186329')
-  .then((data) => parseData(data))
-  .then((parsed) => console.log(parsed));

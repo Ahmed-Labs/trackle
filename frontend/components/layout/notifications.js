@@ -2,8 +2,8 @@ import React from "react";
 
 function Notifications() {
   return (
-    <div className="fixed p-10 h-[400px] min-w-[200px] max-w-[200px]">
-      <div className="flex flex-col">
+    <div className="h-2/3 w-full border-b-2 border-b-gray-200">
+      <div className="flex flex-col items-center p-10">
         <div className="flex items-center mb-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,19 +20,7 @@ function Notifications() {
             />
           </svg>
 
-          <h1 className="font-semibold text-2xl pl-3">Notifications</h1>
-        </div>
-        <div className="fixed h-full overflow-y-auto">
-          <ul >
-            <li className="h-20 my-4 border-b-2">Item</li>
-            <li className="h-20 my-4 border-b-2">Item</li>
-            <li className="h-20 my-4 border-b-2">Item</li>
-            <li className="h-20 my-4 border-b-2">Item</li>
-            <li className="h-20 my-4 border-b-2">Item</li>
-            <li className="h-20 my-4 border-b-2">Item</li>
-            <li className="h-20 my-4 border-b-2">Item</li>
-            <li className="h-20 my-4 border-b-2">Item</li>
-          </ul>
+          <h1 className="font-semibold text-xl pl-3">Notifications</h1>
         </div>
       </div>
     </div>

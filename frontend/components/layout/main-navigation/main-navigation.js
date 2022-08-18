@@ -16,22 +16,26 @@ function MainNavigation() {
         <li
           className={`py-2 ${
             router.pathname === "/dashboard" &&
-            "border-l-4 border-blue-600 text-black"
+            "border-r-4 border-blue-600 text-black"
           }`}
         >
           <Link href="/dashboard">
-            <a className="py-2.5 px-12 rounded hover:bg-slate-200 hover:text-black ease-in-out duration-300">Tracking</a>
+            <a className="py-2.5 px-12 rounded hover:bg-slate-200 hover:text-black ease-in-out duration-300">
+              Tracking
+            </a>
           </Link>
         </li>
 
         <li
           className={`mt-4 py-2 ${
             router.pathname === "/dashboard/settings" &&
-            "border-l-4 border-blue-600 text-black"
+            "border-r-4 border-blue-600 text-black"
           }`}
         >
           <Link href="/dashboard/settings">
-            <a className="py-2.5 px-12 rounded hover:bg-slate-200 hover:text-black ease-in-out duration-300">Settings</a>
+            <a className="py-2.5 px-12 rounded hover:bg-slate-200 hover:text-black ease-in-out duration-300">
+              Settings
+            </a>
           </Link>
         </li>
       </ul>
