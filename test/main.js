@@ -2,9 +2,9 @@ const cpData = require("./canada-post.js");
 const dhlData = require("./dhl.js");
 const detectCarrier = require("./logic.js");
 
-async function getTrackingData(TRACKING_NUMBER) {
+export async function getTrackingData(TRACKING_NUMBER) {
   const carrier = detectCarrier(TRACKING_NUMBER);
-  console.log(carrier);
+
   if (!carrier) {
     return null;
   }
@@ -20,9 +20,3 @@ async function getTrackingData(TRACKING_NUMBER) {
 
   return data;
 }
-
-async function lego(tr) {
-    const d = await getTrackingData(tr)
-  console.log(d);
-}
-

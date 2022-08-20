@@ -1,6 +1,6 @@
 import React from "react";
 
-function SettingsComponent() {
+function SettingsComponent({data}) {
   return (
     <div className="ml-14 mt-10">
       <div className="flex flex-col fixed w-2/3">
