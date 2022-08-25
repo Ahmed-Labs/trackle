@@ -1,4 +1,4 @@
-import { getTrackingData } from "../../test/main";
+import { getTrackingData } from "../../utils/main";
 
 export default async function handler(req, res) {
   const { trackingNumber } = req.body;
