@@ -12,3 +12,11 @@ _Todo_
 - User Auth (Next Auth)
 - SSR from DB -> client dashboard
 - Converting functionalities to use DB
+
+
+UI Previews:
+
+![Alt text](https://imgur.com/KMeT2gn)
+![Alt text](https://imgur.com/rwITL5d)
+![Alt text](https://imgur.com/TIcXY42)
+
