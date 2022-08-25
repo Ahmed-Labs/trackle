@@ -16,7 +16,7 @@ _Todo_
 
 UI Previews:
 
-![Alt text](https://imgur.com/KMeT2gn)
-![Alt text](https://imgur.com/rwITL5d)
-![Alt text](https://imgur.com/TIcXY42)
+![Preview 1](https://imgur.com/KMeT2gn.png)
+![Preview 2](https://imgur.com/rwITL5d.png)
+![Preview 3](https://imgur.com/TIcXY42.png)
 
