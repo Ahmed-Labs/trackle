@@ -11,7 +11,7 @@ function Table() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const nonEmptyArray = userTableData.map((item, index) => {
-    return <TrackingItem key={index} itemNumber={index} item={item} />;
+    return <TrackingItem key={index} itemNumber={index} item={item}/>;
   });
 
   const emptyArray = (
@@ -24,11 +24,11 @@ function Table() {
     <>
       <div className="h-full md:h-screen flex">
         <div className="flex flex-col h-full p-10 flex-auto">
-          <div className="flex h-20 items-center mb-6">
-            <h1 className="font-semibold text-3xl">
+          <div className="flex flex-col md:flex-row items-center mb-7">
+            <h1 className="font-semibold text-2xl lg:text-xl xl:text-2xl pb-6 md:pb-0">
               Tracking ({userTableData.length}) Packages
             </h1>
-            <div className="ml-auto flex items-center">
+            <div className="md:ml-auto flex items-center">
               <div
                 onClick={() => setIsModalOpen(true)}
                 className="w-[300px] bg-gray-200 rounded-lg border border-gray-300 flex items-center py-3 px-4 text-gray-700 hover:bg-gray-300 hover:text-black cursor-pointer"

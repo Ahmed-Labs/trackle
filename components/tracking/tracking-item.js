@@ -10,6 +10,7 @@ function TrackingItem(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  console.log(item);
   useEffect(() => {
     const fetchData = async (tr) => {
       setIsLoading(true);
