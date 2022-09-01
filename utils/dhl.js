@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-module.exports =  async function dhlData(trackingNumber) {
+module.exports = async function dhlData(trackingNumber) {
   const API_URL = `https://api-eu.dhl.com/track/shipments?trackingNumber=${trackingNumber}`;
 
   const headers = {
@@ -32,4 +32,4 @@ module.exports =  async function dhlData(trackingNumber) {
     origin: origin,
     destination: destination,
   };
-}
+};

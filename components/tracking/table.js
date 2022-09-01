@@ -3,9 +3,11 @@ import TrackingItem from "./tracking-item";
 import Button from "../ui/button/main-button";
 import Notifications from "../layout/notifications";
 import Modal from "../ui/modal";
+import Feedback from "../ui/feedback";
+import TrackModal from "../ui/track-modal";
 
 function Table() {
-  const [userTableData, setUserTableData] = useState([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
+  const [userTableData, setUserTableData] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const nonEmptyArray = userTableData.map((item, index) => {
@@ -78,22 +80,12 @@ function Table() {
         </div>
         <div className="hidden lg:flex lg:flex-col h-full max-w-[300px] border-l-2 justify-center">
           <Notifications />
-          <div className="h-1/3 p-4">
-            <div className="h-full rounded-md border-1 flex flex-col justify-center hover:border border-blue-600">
-              <div className="py-8 px-3 text-center">
-                <p className="text-lg font-medium pb-3">User Feedback</p>
-                <p className="text-sm text-gray-600">
-                  Give us feedback so we can improve your experience!
-                </p>
-              </div>
-              <div className="text-center">
-                <Button text="Feedback" direct="/" />
-              </div>
-            </div>
-          </div>
+          <Feedback />
         </div>
       </div>
-      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}/>
+      <Modal open={isModalOpen}>
+        <TrackModal onClose={() => setIsModalOpen(false)} onAdd={setUserTableData}/>
+      </Modal>
     </>
   );
 }

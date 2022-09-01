@@ -20,4 +20,3 @@ export async function getTrackingData(TRACKING_NUMBER) {
 
   return data;
 }
-
