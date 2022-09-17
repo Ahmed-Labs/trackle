@@ -1,17 +1,16 @@
 **Trackle**
 
-An all-in-one package tracking solution
+An all-in-one package tracking solution. 
+
+Users input a tracking number for a shipment, the shipping carrier is automatically detected and the application returns the status and specific details of the shipment. 
 
 _Todo_
 
-- Modal for adding tracking number / re-usable for viewing package details
-- Styling Modal
-- Adding functionality to modal and buttons
-- Dark theme
 - Connecting DB
 - User Auth (Next Auth)
 - SSR from DB -> client dashboard
 - Converting functionalities to use DB
+- Dark theme
 
 
 UI Previews:
