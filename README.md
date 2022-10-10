@@ -1,16 +1,8 @@
 **Trackle**
 
-An all-in-one package tracking solution. 
+An all-in-one package tracking solution. Allows users to effortlessly track multiple shipments from different shipping carriers
 
 Users input a tracking number for a shipment, the shipping carrier is automatically detected and the application returns the status and specific details of the shipment. 
-
-_Todo_
-
-- Connecting DB
-- User Auth (Next Auth)
-- SSR from DB -> client dashboard
-- Converting functionalities to use DB
-- Dark theme
 
 
 UI Previews:
