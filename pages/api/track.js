@@ -7,6 +7,6 @@ export default async function handler(req, res) {
     const data = await getTrackingData(trackingNumber);
     res.status(200).json(data);
   } else {
-    res.status(200).json({ message: "This is a get request" });
+    res.status(200).json({ message: "This is a request" });
   }
 }

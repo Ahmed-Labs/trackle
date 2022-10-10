@@ -26,7 +26,7 @@ function Table() {
         <div className="flex flex-col h-full p-10 flex-auto">
           <div className="flex flex-col md:flex-row items-center mb-7">
             <h1 className="font-semibold text-2xl lg:text-xl xl:text-2xl pb-6 md:pb-0">
-              Tracking ({userTableData.length}) Packages
+              Tracking ({userTableData.length}) {userTableData.length === 1 ? 'Package' : 'Packages'}
             </h1>
             <div className="md:ml-auto flex items-center">
               <div
