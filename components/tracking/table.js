@@ -1,17 +1,43 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TrackingItem from "./tracking-item";
-import Button from "../ui/button/main-button";
 import Notifications from "../layout/notifications";
 import Modal from "../ui/modal";
 import Feedback from "../ui/feedback";
 import TrackModal from "../ui/track-modal";
+import { ThemeContext } from "../../pages/themeContext";
 
 function Table() {
   const [userTableData, setUserTableData] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { toggle } = useContext(ThemeContext);
 
+  useEffect(() => {
+    const localData = JSON.parse(window.localStorage.getItem("localData"));
+    if (localData !== null) {
+      setUserTableData(localData);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("localData", JSON.stringify(userTableData));
+  }, [userTableData]);
+
+  function removeItemHandler(keyId) {
+    setUserTableData(
+      userTableData.filter((item, index) => {
+        return index != keyId;
+      })
+    );
+  }
   const nonEmptyArray = userTableData.map((item, index) => {
-    return <TrackingItem key={index} itemNumber={index} item={item}/>;
+    return (
+      <TrackingItem
+        key={index}
+        keyId={index}
+        item={item}
+        removeItem={removeItemHandler}
+      />
+    );
   });
 
   const emptyArray = (
@@ -22,16 +48,17 @@ function Table() {
 
   return (
     <>
-      <div className="h-full md:h-screen flex">
-        <div className="flex flex-col h-full p-10 flex-auto">
+      <div className={`h-full md:h-screen flex ${toggle && "dark"}`}>
+        <div className="flex flex-col h-full p-10 flex-auto dark:bg-slate-900">
           <div className="flex flex-col md:flex-row items-center mb-7">
-            <h1 className="font-semibold text-2xl lg:text-xl xl:text-2xl pb-6 md:pb-0">
-              Tracking ({userTableData.length}) {userTableData.length === 1 ? 'Package' : 'Packages'}
+            <h1 className="font-semibold text-2xl lg:text-xl xl:text-2xl pb-6 md:pb-0 dark:text-slate-200">
+              Tracking ({userTableData.length}){" "}
+              {userTableData.length === 1 ? "Package" : "Packages"}
             </h1>
             <div className="md:ml-auto flex items-center">
               <div
                 onClick={() => setIsModalOpen(true)}
-                className="w-[300px] bg-gray-200 rounded-lg border border-gray-300 flex items-center py-3 px-4 text-gray-700 hover:bg-gray-300 hover:text-black cursor-pointer"
+                className="w-[300px] bg-gray-200 rounded-lg border border-gray-300 flex items-center py-3 px-4 text-gray-700 hover:bg-gray-300 hover:text-black cursor-pointer dark:bg-slate-900 dark:border-gray-400 dark:text-gray-300 dark:hover:bg-slate-800"
               >
                 <div className="pr-2">
                   <svg
@@ -78,13 +105,16 @@ function Table() {
             )}
           </div>
         </div>
-        <div className="hidden lg:flex lg:flex-col h-full max-w-[300px] border-l-2 justify-center">
+        <div className="hidden lg:flex lg:flex-col h-full max-w-[300px] border-l-2 justify-center dark:border-gray-600">
           <Notifications />
           <Feedback />
         </div>
       </div>
       <Modal open={isModalOpen}>
-        <TrackModal onClose={() => setIsModalOpen(false)} onAdd={setUserTableData}/>
+        <TrackModal
+          onClose={() => setIsModalOpen(false)}
+          onAdd={setUserTableData}
+        />
       </Modal>
     </>
   );
