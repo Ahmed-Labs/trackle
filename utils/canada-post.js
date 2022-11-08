@@ -41,7 +41,7 @@ module.exports =  async function cpData (trackingNumber) {
     delivered: delivered,
     status: status,
     shippedTimestamp: shippedDateTime,
-    expectedDeliveryTimestamp: expectedDlvryDateTime,
+    expectedDeliveryTimestamp: expectedDlvryDateTime.dlvryDate,
     attemptedDeliveryDate: attemptedDlvryDate,
     deliveryDate: actualDlvryDate,
     events: events,

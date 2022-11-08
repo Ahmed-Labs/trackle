@@ -1,5 +1,6 @@
 const cpData = require("./canada-post.js");
 const dhlData = require("./dhl.js");
+const purolatorData = require("./purolator.js");
 const detectCarrier = require("./logic.js");
 
 export async function getTrackingData(TRACKING_NUMBER) {
@@ -16,6 +17,8 @@ export async function getTrackingData(TRACKING_NUMBER) {
     case "DHL":
       data = await dhlData(TRACKING_NUMBER);
       break;
+    case "Purolator":
+      data = await purolatorData(TRACKING_NUMBER);
   }
 
   return data;
