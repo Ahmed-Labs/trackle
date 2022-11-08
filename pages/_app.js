@@ -1,13 +1,15 @@
 import "../styles/globals.css";
-
+import { ThemeProvider } from "./themeContext";
 
 function MyApp({ Component, pageProps }) {
   const Layout = Component.getLayout || EmptyLayout;
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   );
 }
 
