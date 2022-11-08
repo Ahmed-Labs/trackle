@@ -4,44 +4,57 @@ import Modal from "../ui/modal";
 import PackageInfoModal from "../ui/package-info-modal";
 
 function TrackingItem(props) {
-  const { item, index } = props;
+  const { item, keyId } = props;
   const trackingNumber = item.trackingNumber;
-  const [packageData, setPackageData] = useState({});
+  const [packageData, setPackageData] = useState({ ...item });
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  console.log(item);
-  useEffect(() => {
-    const fetchData = async (tr) => {
-      setIsLoading(true);
-      const data = await fetch("/api/track", {
-        method: "POST",
-        body: JSON.stringify({ trackingNumber: tr }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const json = await data.json();
-      setPackageData(json);
-      setIsLoading(false);
-    };
+  async function fetchData(tr) {
+    setIsLoading(true);
+    const data = await fetch("/api/track", {
+      method: "POST",
+      body: JSON.stringify({ trackingNumber: tr }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await data.json();
+    console.log(packageData);
+    console.log(json);
+    setPackageData({ ...packageData, ...json });
+    setIsLoading(false);
+  }
 
+  useEffect(() => {
     fetchData(trackingNumber).catch(console.error);
   }, []);
 
   return (
     <>
       <div className="col-span-1">
-        <div onClick={() => setIsModalOpen(true)} className="flex flex-col rounded border border-gray-300 p-6 hover:border-gray-400 transition-alldelay-200 cursor-pointer">
+        <div className="flex flex-col rounded border border-gray-300 dark:border-gray-600 dark:hover:border-gray-400 p-6 hover:border-gray-400 transition-alldelay-200 cursor-pointer">
           <div className="flex flex-col">
             <div className="flex flex-row">
-              <p className="font font-medium mb-2">{item.packageName}</p>
+              <p className="font font-medium mb-2 dark:text-gray-300">
+                {item.packageName}
+              </p>
               {/* <p className="ml-auto">{Math.floor(Math.random() * 10) + 1}d</p> */}
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="ml-auto px-3 py-1 rounded text-gray-700 bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600"
+              >
+                Details
+              </button>
             </div>
-            <p>{trackingNumber}</p>
-            <p className="text-gray-600 mb-2">{item.carrier}</p>
+            <p className="dark:text-gray-400">{trackingNumber}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-2">
+              {item.carrier}
+            </p>
           </div>
-          <p>{isLoading ? "Loading..." : packageData.status}</p>
+          <p className="dark:text-gray-300">
+            {isLoading ? "Loading..." : packageData.status}
+          </p>
 
           <div className="flex flex-row items-center">
             <div>
@@ -49,7 +62,11 @@ function TrackingItem(props) {
                 status={isLoading ? "Loading" : packageData.status}
               />
             </div>
-            <div className="px-3 ml-auto">
+            <button
+              type="button"
+              onClick={() => props.removeItem(keyId)}
+              className="ml-auto p-1.5 rounded-lg hover:bg-slate-200 dark:text-gray-300 dark:hover:bg-slate-700"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -62,8 +79,14 @@ function TrackingItem(props) {
                   clip-rule="evenodd"
                 />
               </svg>
-            </div>
-            <div className="px-3">
+            </button>
+            <div
+              onClick={() => {
+                setPackageData({ ...item });
+                fetchData(trackingNumber);
+              }}
+              className="z-10 p-1.5 ml-1 rounded-lg hover:bg-slate-200 dark:text-gray-300 dark:hover:bg-slate-700"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
