@@ -25,7 +25,7 @@ function TrackModal({ onClose, onAdd }) {
   }
 
   return (
-    <div className="p-7 bg-white rounded-lg overflow-hidden">
+    <div className="p-7 bg-white rounded-lg overflow-hidden dark:bg-slate-900 dark:text-gray-200">
       <div className="w-[400px]">
         <form
           onSubmit={submitPackageHandler}
@@ -42,22 +42,24 @@ function TrackModal({ onClose, onAdd }) {
           </div>
           <div className="mt-5 flex flex-col justify-center">
             <div className="flex flex-col px-10 py-3">
-              <label className="text-gray-600 font-medium mb-2">Name</label>
+              <label className="text-gray-600 font-medium mb-2 dark:text-gray-400">
+                Name
+              </label>
               <input
                 id="tracking-number"
-                class="p-4 w-full text-m text-gray-900 outline-none bg-gray-50"
+                class="p-4 w-full text-m text-gray-900 outline-none bg-gray-50 dark:bg-slate-800 rounded"
                 placeholder="Enter package name"
                 ref={packageName}
                 required
               />
             </div>
             <div className="flex flex-col px-10 py-3">
-              <label className="text-gray-600 font-medium mb-2">
+              <label className="text-gray-600 font-medium mb-2 dark:text-gray-400">
                 Tracking Number
               </label>
               <input
                 id="tracking-number"
-                class="p-4 w-full text-m text-gray-900 outline-none bg-gray-50"
+                class="p-4 w-full text-m text-gray-900 outline-none bg-gray-50 dark:bg-slate-800 rounded"
                 placeholder="Enter a tracking number"
                 required
                 ref={inputTrackingNumber}
@@ -65,12 +67,12 @@ function TrackModal({ onClose, onAdd }) {
               />
             </div>
             <div className="flex flex-col px-10 py-3">
-              <label className="text-gray-600 font-medium mb-2">
+              <label className="text-gray-600 font-medium mb-2 dark:text-gray-400">
                 Shipping Carrier (Auto-detect)
               </label>
               <input
                 id="detected-carrier"
-                class="p-4 w-full text-m text-gray-900 outline-none bg-gray-50"
+                class="p-4 w-full text-m text-gray-900 outline-none bg-gray-50 dark:bg-slate-800 rounded"
                 placeholder={detectedCarrier}
                 disabled
               />
