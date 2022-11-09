@@ -4,7 +4,7 @@ import Notifications from "../layout/notifications";
 import Modal from "../ui/modal";
 import Feedback from "../ui/feedback";
 import TrackModal from "../ui/track-modal";
-import { ThemeContext } from "../../pages/themeContext";
+import { ThemeContext } from "../ui/themeContext";
 
 function Table() {
   const [userTableData, setUserTableData] = useState([]);
