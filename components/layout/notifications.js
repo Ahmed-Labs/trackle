@@ -3,7 +3,7 @@ import { ThemeContext } from "../../pages/themeContext";
 
 function Notifications() {
   const [userNotifications, setUserNotifications] = useState([]);
-  const numMap = new Array(5).fill(0);
+  const numMap = new Array(1).fill(0);
   const { toggle } = useContext(ThemeContext);
   const notifObjects = [
     {
@@ -48,19 +48,23 @@ function Notifications() {
             Notifications
           </h1>
         </div>
-        <div className="h-[100%] mt-3 overflow-y-scroll">
+        <div className="h-full mt-3 overflow-y-scroll scrollbar">
           {/* <div>{
           notifObjects.map((notif) => <Notification key="" notifObject={notif}/>)
         }</div> */}
 
           {numMap.map((item) => {
             return (
-              <div className="mt-1 w-full overflow-x-auto px-5 py-4 border-b border-gray-300 dark:text-gray-400">
-                <p className="font-semibold text-md">{notifObjects[1].title}</p>
-                <p className="text-md">{notifObjects[1].description}</p>
-                <p className="text-md text-gray-600 dark:text-gray-500">
-                  {notifObjects[1].content}
-                </p>
+              <div className="px-2">
+                <div className="mt-1 w-full overflow-x-auto px-5 py-4 border-b border-gray-500 dark:text-gray-200 dark:bg-slate-900">
+                  <p className="font-semibold text-md">
+                    {notifObjects[1].title}
+                  </p>
+                  <p className="text-md">{notifObjects[1].description}</p>
+                  <p className="text-md text-gray-600 dark:text-gray-500">
+                    {notifObjects[1].content}
+                  </p>
+                </div>
               </div>
             );
           })}

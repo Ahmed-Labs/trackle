@@ -32,7 +32,7 @@ function TrackingItem(props) {
 
   return (
     <>
-      <div className="col-span-1">
+      <div className="col-span-1 mr-2">
         <div className="flex flex-col rounded border border-gray-300 dark:border-gray-600 dark:hover:border-gray-400 p-6 hover:border-gray-400 transition-alldelay-200 cursor-pointer">
           <div className="flex flex-col">
             <div className="flex flex-row">

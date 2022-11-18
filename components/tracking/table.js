@@ -95,7 +95,7 @@ function Table() {
             </div>
           </div>
 
-          <div className="overflow-y-scroll">
+          <div className="overflow-y-scroll scrollbar">
             {userTableData.length === 0 ? (
               emptyArray
             ) : (
