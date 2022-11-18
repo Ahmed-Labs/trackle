@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { ThemeContext } from "../../pages/themeContext";
+import { ThemeContext } from "../ui/themeContext";
 
 function Notifications() {
   const [userNotifications, setUserNotifications] = useState([]);

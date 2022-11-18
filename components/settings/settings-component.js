@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { ThemeContext } from "../../pages/themeContext";
+import { ThemeContext } from "../ui/themeContext";
 
 function SettingsComponent() {
   const [theme, setTheme] = useState("Light");

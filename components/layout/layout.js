@@ -1,6 +1,6 @@
 import React, { ReactElement, useContext } from "react";
 import MainNavigation from "./main-navigation/main-navigation";
-import { ThemeContext } from "../../pages/themeContext";
+import { ThemeContext } from "../ui/themeContext";
 
 function Layout({ children }) {
   const { toggle } = useContext(ThemeContext)

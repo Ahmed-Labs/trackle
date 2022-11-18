@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { ThemeProvider } from "./themeContext";
+import { ThemeProvider } from "../components/ui/themeContext";
 
 function MyApp({ Component, pageProps }) {
   const Layout = Component.getLayout || EmptyLayout;

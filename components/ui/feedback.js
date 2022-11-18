@@ -1,5 +1,5 @@
 import Button from "./button/main-button";
-import { ThemeContext } from "../../pages/themeContext";
+import { ThemeContext } from "./themeContext";
 import { useContext } from "react";
 
 function Feedback() {
