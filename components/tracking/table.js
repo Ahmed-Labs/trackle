@@ -48,7 +48,7 @@ function Table() {
 
   return (
     <>
-      <div className={`h-full md:h-screen flex ${toggle && "dark"}`}>
+      <div className={`bottom-0 top-0 left-0 right-0 fixed items-center justify-center lg:left-[200px] md:h-screen flex ${toggle && "dark"}`}>
         <div className="flex flex-col h-full p-10 flex-auto dark:bg-slate-900">
           <div className="flex flex-col md:flex-row items-center mb-7">
             <h1 className="font-semibold text-2xl lg:text-xl xl:text-2xl pb-6 md:pb-0 dark:text-slate-200">

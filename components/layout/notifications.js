@@ -4,7 +4,6 @@ import { ThemeContext } from "../ui/themeContext";
 function Notifications() {
   const [userNotifications, setUserNotifications] = useState([]);
   const numMap = new Array(1).fill(0);
-  const { toggle } = useContext(ThemeContext);
   const notifObjects = [
     {
       title: "Welcome!",

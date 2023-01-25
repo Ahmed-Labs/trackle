@@ -4,9 +4,13 @@ import { ThemeContext } from "../ui/themeContext";
 function SettingsComponent() {
   const [theme, setTheme] = useState("Light");
   const { toggle, toggleFunction } = useContext(ThemeContext);
-
+  
   return (
-    <div className={`h-full flex-auto dark:bg-slate-900 dark:text-gray-200 ${toggle && "dark"}`}>
+    <div
+      className={`h-screen flex-auto dark:bg-slate-900 dark:text-gray-200 ${
+        toggle && "dark"
+      }`}
+    >
       <div className={`p-10`}>
         <div className="flex h-20 items-center">
           <h1 className="font-semibold text-2xl">Settings</h1>
